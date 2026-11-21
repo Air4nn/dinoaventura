@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>¡Diversión Prehistórica! | DinoAventura Decoraciones</title>
+  <meta name="description" content="Decoración de cumpleaños, baby showers y fiestas temáticas de dinosaurios en Bogotá.">
+  <link rel="icon" href="img/logo-principal.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Lilita One: la tipografia mas cercana (y gratuita) al rotulo del logo. Nunito: texto de lectura. -->
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <!-- ENCABEZADO (igual en todas las paginas): rotulo del logo y menu. aria-current marca la pagina actual. -->
+  <header class="header">
+    <div class="contenedor nav">
+      <a href="index.html" class="logo"><img src="img/logo-palabra.png" alt="DinoAventura Decoraciones, inicio" width="157" height="52"></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+      <nav id="menu" class="menu">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="galeria.html">Galería</a>
+        <a href="cotizar.html">Cotizar</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="pill" href="pedido.html">Mi pedido (<span id="contadorPedido">0</span>)</a>
+      </nav>
+    </div>
+  </header>
+  <main id="contenido">
+    <!-- INICIO: eslogan, logo grande y atajos a cada pagina del sitio. -->
+    <section class="hero">
+      <div class="contenedor hero-grid">
+        <div>
+          <p class="sello">Decoración infantil en Bogotá</p>
+          <h1 class="rotulo">¡Diversión Prehistórica!</h1>
+          <p class="lead">Cumpleaños, baby showers y fiestas temáticas con los dinosaurios como protagonistas, en Bogotá y su área metropolitana.</p>
+          <a class="btn" href="catalogo.html">Ver paquetes</a>
+          <a class="btn btn-verde" data-wa target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+        <div class="hero-logo"><img src="img/logo-principal.png" alt="Dinosaurio sonriente, logo de DinoAventura Decoraciones" width="520" height="645"></div>
+      </div>
+    </section>
+    <section class="seccion">
+      <div class="contenedor">
+        <h2>Explora el sitio</h2>
+        <div class="atajos">
+          <a class="atajo" href="nosotros.html"><span class="num">01</span><h3>Quiénes somos</h3><p>Conoce a la empresa detrás de la diversión.</p></a>
+          <a class="atajo" href="servicios.html"><span class="num">02</span><h3>Servicios</h3><p>Cumpleaños, baby showers y fiestas temáticas.</p></a>
+          <a class="atajo" href="catalogo.html"><span class="num">03</span><h3>Catálogo</h3><p>Paquetes con precios para elegir.</p></a>
+          <a class="atajo" href="galeria.html"><span class="num">04</span><h3>Galería</h3><p>Nuestros trabajos en un carrusel.</p></a>
+          <a class="atajo" href="cotizar.html"><span class="num">05</span><h3>Cotizar</h3><p>Cuéntanos tu evento y te escribimos.</p></a>
+          <a class="atajo" href="contacto.html"><span class="num">06</span><h3>Contacto</h3><p>WhatsApp, correo y redes.</p></a>
+        </div>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="contenedor">
+        <h2>¿Listo para tu fiesta prehistórica?</h2>
+        <a class="btn" href="cotizar.html">Pedir cotización</a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <img src="img/logo-principal.png" alt="" width="42" height="52">
+    <p class="eslogan">¡Diversión Prehistórica!</p>
+    <p>© <span id="anio"></span> DinoAventura Decoraciones. Bogotá, Colombia.</p>
+  </footer>
+  <a class="wa-flotante" data-wa target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M8.6 7.5c-.4 0-.8.2-1 .7-.4 1 .1 2.4 1.3 3.9 1.3 1.6 2.9 2.7 4.4 2.9.6.1 1.3-.4 1.5-1 .1-.3 0-.5-.2-.6l-1.3-.7c-.2-.1-.4 0-.5.1l-.5.6c-1-.4-1.9-1.3-2.4-2.3l.5-.5c.1-.1.2-.3.1-.5l-.7-1.4c-.1-.2-.3-.2-.5-.2z"/></svg></a>
+  <!-- ORDEN de scripts: datos primero, luego la logica que los usa. -->
+  <script src="js/config.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/pedido.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Pon aqui las fotos de los paquetes. Despues escribe su ruta en el campo "imagen" de js/productos.js

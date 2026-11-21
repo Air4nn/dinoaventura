@@ -1,0 +1,141 @@
+/* ESTILOS v4. Todo sale del logo: verdes, naranja y amarillo de su paleta, contornos gruesos
+   oscuros como el rotulo, y hojas como las del dinosaurio. Se disena primero para celular. */
+:root {
+  --hoja: #1d5a22; --hoja-osc: #123d17; --pasto: #4caf2a; --lima: #9ad940; --lima-cl: #e4f5c0;
+  --sol: #ffd84a; --naranja: #ff9a1f; --crema: #fffbe6; --tinta: #173d1b;
+  --display: "Lilita One", "Trebuchet MS", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Nunito", system-ui, sans-serif; color: var(--tinta); background: var(--crema); line-height: 1.65; overflow-x: hidden; }
+[hidden] { display: none !important; }
+h1, h2, h3, .num, .precio, .total { font-family: var(--display); font-weight: 400; line-height: 1.1; }
+h2 { font-size: clamp(1.9rem, 5vw, 2.7rem); color: var(--hoja); margin-bottom: 1.4rem; }
+h2::after { content: ""; display: block; width: 72px; height: 8px; border-radius: 8px; background: var(--naranja); margin-top: .5rem; }
+h3 { font-size: 1.4rem; color: var(--hoja); margin-bottom: .4rem; }
+a { color: inherit; }
+:focus-visible { outline: 4px solid var(--naranja); outline-offset: 3px; }
+.saltar { position: absolute; left: -999px; } .saltar:focus { left: 8px; top: 8px; z-index: 99; background: var(--sol); padding: .5rem 1rem; }
+.contenedor { width: min(1100px, 90%); margin-inline: auto; }
+.texto-ancho { max-width: 720px; }
+.seccion { padding: 4rem 0; }
+.alterna { background: var(--lima-cl); }
+.nota { font-size: .85rem; opacity: .75; margin-top: 1rem; }
+.dos-col { display: grid; gap: 2rem; align-items: center; }
+
+/* Rotulo: letras naranjas con contorno verde oscuro, como el nombre del logo */
+.rotulo { color: var(--naranja); -webkit-text-stroke: .13em var(--hoja-osc); paint-order: stroke fill; text-shadow: 0 .06em 0 var(--hoja-osc); letter-spacing: .01em; }
+
+/* Encabezado */
+.header { position: sticky; top: 0; z-index: 20; background: var(--hoja); border-bottom: 5px solid var(--sol); }
+.nav { display: flex; justify-content: space-between; align-items: center; min-height: 68px; flex-wrap: wrap; }
+.logo img { height: 52px; width: auto; display: block; }
+.menu-btn { background: none; border: 0; cursor: pointer; padding: .5rem; }
+.menu-btn span { display: block; width: 26px; height: 3px; background: var(--crema); margin: 5px 0; border-radius: 2px; }
+.menu { display: none; width: 100%; flex-direction: column; padding-bottom: 1rem; }
+.menu.abierto { display: flex; }
+.menu a { color: var(--crema); padding: .5rem 0; text-decoration: none; font-weight: 800; }
+.menu a:hover, .menu a[aria-current="page"] { color: var(--sol); }
+.menu .pill { background: var(--naranja); color: var(--hoja-osc); border-radius: 999px; padding: .4rem 1rem; text-align: center; margin-top: .4rem; }
+.menu .pill:hover { background: var(--sol); color: var(--hoja-osc); }
+
+/* Botones con contorno oscuro y "sombra" de relieve */
+.btn { display: inline-block; background: var(--naranja); color: var(--hoja-osc); border: 3px solid var(--hoja-osc); border-radius: 999px; padding: .55rem 1.5rem; font: 400 1.1rem var(--display); text-decoration: none; cursor: pointer; margin: .3rem .5rem .3rem 0; box-shadow: 0 5px 0 var(--hoja-osc); transition: transform .12s, box-shadow .12s; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 7px 0 var(--hoja-osc); }
+.btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--hoja-osc); }
+.btn-verde { background: var(--lima); }
+
+/* Portada */
+.hero { background: radial-gradient(circle at 75% 40%, #fff 0, var(--lima-cl) 55%, var(--crema) 100%); padding: 3rem 0 4rem; }
+.hero-grid { display: grid; gap: 2rem; align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 8.5vw, 4.8rem); margin-bottom: 1rem; }
+.sello { display: inline-block; background: var(--sol); border: 3px solid var(--hoja-osc); border-radius: 999px; font-weight: 800; padding: .2rem 1rem; margin-bottom: 1rem; }
+.lead { font-size: 1.2rem; max-width: 46ch; margin-bottom: 1.4rem; }
+.hero-logo img { width: min(420px, 85%); height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 12px 14px rgba(18,61,23,.25)); animation: flota 4s ease-in-out infinite; }
+@keyframes flota { 50% { transform: translateY(-10px); } }
+
+/* Banner de paginas internas: hojas decorativas como las del logo */
+.banner { position: relative; overflow: hidden; background: var(--hoja); color: var(--crema); padding: 3rem 0 5.5rem; }
+.banner::before, .banner::after { content: ""; position: absolute; border-radius: 0 100% 0 100%; }
+.banner::before { width: 230px; height: 230px; right: -50px; top: -60px; background: var(--pasto); opacity: .6; transform: rotate(20deg); }
+.banner::after { width: 150px; height: 150px; left: -30px; bottom: 10px; background: var(--lima); opacity: .35; transform: rotate(-70deg); }
+.banner .contenedor { position: relative; z-index: 1; }
+.banner h1 { font-size: clamp(2.3rem, 7vw, 3.8rem); }
+.banner p { font-size: 1.15rem; margin-top: .6rem; }
+.ola { position: absolute; bottom: -1px; left: 0; width: 100%; height: 50px; fill: var(--crema); }
+
+/* Tarjetas */
+.grid { display: grid; gap: 1.6rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.tarjeta, .atajo, .producto { background: #fff; border: 3px solid var(--hoja); border-radius: 24px; box-shadow: 0 7px 0 rgba(29,90,34,.28); }
+.tarjeta { padding: 1.6rem; }
+.atajo { display: block; padding: 1.4rem; text-decoration: none; transition: transform .2s; }
+.atajo:hover { transform: translateY(-5px) rotate(-1deg); }
+.atajos { display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.num { display: inline-block; font-size: 1.1rem; background: var(--sol); border: 3px solid var(--hoja-osc); border-radius: 999px; padding: 0 .8rem; margin-bottom: .5rem; }
+.cta { background: var(--hoja); color: var(--crema); text-align: center; padding: 3.5rem 0; }
+.cta h2 { color: var(--sol); } .cta h2::after { margin-inline: auto; }
+
+/* Catalogo */
+.filtros { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.8rem; }
+.filtro { background: #fff; border: 3px solid var(--hoja); border-radius: 999px; padding: .35rem 1.1rem; font: 400 1.05rem var(--display); color: var(--hoja); cursor: pointer; }
+.filtro[aria-pressed="true"] { background: var(--hoja); color: var(--sol); }
+.producto { overflow: hidden; display: flex; flex-direction: column; transition: transform .2s; }
+.producto:hover { transform: translateY(-5px); }
+.producto-img { position: relative; height: 200px; background: var(--lima-cl); border-bottom: 3px solid var(--hoja); }
+.producto[data-categoria="baby shower"] .producto-img { background: #fff0b8; }
+.producto[data-categoria="temática"] .producto-img { background: #ffe0b5; }
+.producto-img img { width: 100%; height: 100%; object-fit: cover; }
+.producto-img .sin-foto { object-fit: contain; padding: .8rem; }
+.etiqueta { position: absolute; top: 10px; left: 10px; background: var(--hoja); color: var(--crema); font: 800 .75rem "Nunito", sans-serif; padding: .15rem .7rem; border-radius: 999px; }
+.producto-cuerpo { padding: 1.2rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+.precio { align-self: flex-start; background: var(--sol); border: 3px solid var(--hoja-osc); border-radius: 999px; padding: .05rem .9rem; font-size: 1.3rem; }
+.acciones { margin-top: auto; display: grid; gap: .6rem; padding-top: .5rem; }
+.acciones .btn { margin: 0; text-align: center; font-size: 1rem; }
+
+/* Mi pedido */
+.ticket { background: #fff; border: 3px dashed var(--hoja); border-radius: 18px; padding: 1.8rem; box-shadow: 0 7px 0 rgba(29,90,34,.28); }
+.lista-pedido { list-style: none; padding: 0; margin: 1rem 0; }
+.lista-pedido li { display: grid; grid-template-columns: 1fr auto auto; gap: .8rem; align-items: center; padding: .7rem 0; border-bottom: 2px dotted var(--pasto); }
+.cantidad { display: flex; align-items: center; gap: .5rem; }
+.cantidad button { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--hoja); background: var(--lima-cl); font: 400 1.2rem var(--display); cursor: pointer; }
+.total { font-size: 1.6rem; color: var(--naranja-osc, #d96d00); margin-bottom: .8rem; }
+
+/* Carrusel de la galeria */
+.carrusel-caja { max-width: 900px; margin-inline: auto; }
+.carrusel { position: relative; overflow: hidden; border: 4px solid var(--hoja); border-radius: 28px; box-shadow: 0 9px 0 rgba(29,90,34,.3); background: #fff; }
+.carrusel-pista { display: flex; transition: transform .5s ease; }
+.diapo { min-width: 100%; position: relative; aspect-ratio: 4 / 3; background: var(--lima-cl); }
+.diapo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.diapo.sin-foto img { object-fit: contain; padding: 1.5rem 1.5rem 4.5rem; }
+.diapo figcaption { position: absolute; inset: auto 0 0 0; padding: 2rem 1.3rem .9rem; background: linear-gradient(transparent, rgba(18,61,23,.88)); color: var(--crema); }
+.diapo figcaption b { font: 400 1.35rem var(--display); }
+.car-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; border: 3px solid var(--hoja-osc); background: var(--sol); font: 400 1.7rem/1 var(--display); cursor: pointer; z-index: 2; }
+.car-prev { left: 10px; } .car-next { right: 10px; }
+.car-puntos { display: flex; justify-content: center; gap: 10px; margin-top: 1.4rem; }
+.car-puntos button { width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--hoja); background: #fff; cursor: pointer; padding: 0; }
+.car-puntos button[aria-current="true"] { background: var(--naranja); }
+
+/* Formulario */
+form { display: grid; gap: 1rem; background: #fff; padding: 1.6rem; border: 3px solid var(--hoja); border-radius: 24px; box-shadow: 0 7px 0 rgba(29,90,34,.28); }
+label { display: grid; gap: .3rem; font-weight: 800; }
+input, select, textarea { font: inherit; padding: .65rem; border: 3px solid var(--hoja); border-radius: 12px; background: var(--crema); }
+.error { color: #b3261e; font-weight: 800; min-height: 1.4em; }
+
+/* Contacto y pie */
+.contacto { list-style: none; padding: 0; display: grid; gap: .8rem; margin-bottom: 1.2rem; font-size: 1.1rem; }
+.contacto b { color: var(--hoja); display: inline-block; min-width: 90px; }
+.redes a { margin-right: 1.2rem; font-weight: 800; color: var(--hoja); }
+.footer { background: var(--hoja-osc); color: var(--crema); text-align: center; padding: 2rem 0; }
+.footer img { height: 52px; margin-bottom: .6rem; }
+.eslogan { font: 400 1.3rem var(--display); color: var(--sol); }
+.wa-flotante { position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 60px; height: 60px; display: grid; place-items: center; background: #25d366; color: #25d366; border: 3px solid var(--hoja-osc); border-radius: 50%; box-shadow: 0 4px 0 var(--hoja-osc); }
+.wa-flotante svg { width: 36px; height: 36px; }
+
+/* Escritorio: desde 760px */
+@media (min-width: 760px) {
+  .menu-btn { display: none; }
+  .menu { display: flex; flex-direction: row; align-items: center; width: auto; gap: 1.1rem; padding: 0; }
+  .menu .pill { margin: 0; }
+  .hero-grid, .dos-col { grid-template-columns: 1.2fr 1fr; gap: 3rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
