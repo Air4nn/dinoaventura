@@ -4,7 +4,9 @@
 (function () {
   const pista = $("#carruselPista");
   if (!pista) return;
-  const fotos = GALERIA.length ? GALERIA : [
+  // Si galeria.js tiene un error de sintaxis, GALERIA no existe: se usan los espacios de ejemplo en vez de romper la pagina.
+  const lista = typeof GALERIA !== "undefined" ? GALERIA : [];
+  const fotos = lista.length ? lista : [
     { titulo: "Aquí irá tu primera foto", texto: "Agrega tus imágenes en js/galeria.js", vacia: true },
     { titulo: "Cumpleaños, baby showers y más", texto: "Cada foto de la lista es una diapositiva", vacia: true },
     { titulo: "Diversión prehistórica", texto: "Sigue la guía GUIA.md, paso 2", vacia: true }

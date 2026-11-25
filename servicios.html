@@ -35,7 +35,8 @@
     <!-- Banner de la pagina: titulo con el estilo del rotulo y hojas decorativas (CSS) -->
     <section class="banner"><div class="contenedor"><h1 class="rotulo">Servicios</h1><p>Elige qué quieres celebrar</p></div><svg class="ola" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C240 70 480 0 720 30 S1200 60 1440 20 V60 H0Z"/></svg></section>
     <section class="seccion">
-      <div class="contenedor"><div class="grid">
+      <!-- React dibuja aqui las tarjetas (js/servicios.js). Si React no carga, queda este HTML estatico como respaldo. -->
+      <div class="contenedor" id="serviciosRaiz"><div class="grid grid-servicios">
           <article class="tarjeta"><span class="num">01</span><h3>Cumpleaños</h3><p>Decoración completa: globos, mesa de dulces, fondos y centros de mesa.</p><a class="btn btn-verde" href="catalogo.html#cumplea%C3%B1os">Ver paquetes</a></article>
           <article class="tarjeta"><span class="num">02</span><h3>Baby showers</h3><p>Ambientes tiernos y temáticos para recibir al bebé.</p><a class="btn btn-verde" href="catalogo.html#baby%20shower">Ver paquetes</a></article>
           <article class="tarjeta"><span class="num">03</span><h3>Fiestas temáticas</h3><p>Dinosaurios y otras temáticas infantiles hechas a tu medida.</p><a class="btn btn-verde" href="catalogo.html#tem%C3%A1tica">Ver paquetes</a></article>
@@ -53,5 +54,10 @@
   <script src="js/productos.js"></script>
   <script src="js/main.js"></script>
   <script src="js/pedido.js"></script>
+  <!-- React 18 (version fija, sin compilar) y los archivos de la pagina de servicios -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="js/servicios-datos.js"></script>
+  <script src="js/servicios.js"></script>
 </body>
 </html>

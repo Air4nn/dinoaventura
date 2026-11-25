@@ -2,7 +2,7 @@
    oscuros como el rotulo, y hojas como las del dinosaurio. Se disena primero para celular. */
 :root {
   --hoja: #1d5a22; --hoja-osc: #123d17; --pasto: #4caf2a; --lima: #9ad940; --lima-cl: #e4f5c0;
-  --sol: #ffd84a; --naranja: #ff9a1f; --crema: #fffbe6; --tinta: #173d1b;
+  --tierra: #6b4423; --sol: #ffd84a; --naranja: #ff9a1f; --crema: #fffbe6; --tinta: #173d1b;
   --display: "Lilita One", "Trebuchet MS", system-ui, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; }
@@ -104,8 +104,9 @@ a { color: inherit; }
 .carrusel-caja { max-width: 900px; margin-inline: auto; }
 .carrusel { position: relative; overflow: hidden; border: 4px solid var(--hoja); border-radius: 28px; box-shadow: 0 9px 0 rgba(29,90,34,.3); background: #fff; }
 .carrusel-pista { display: flex; transition: transform .5s ease; }
-.diapo { min-width: 100%; position: relative; aspect-ratio: 4 / 3; background: var(--lima-cl); }
-.diapo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.diapo { min-width: 100%; position: relative; aspect-ratio: 1 / 1; background: var(--hoja-osc); }
+/* contain: las fotos verticales (celular) se ven completas en vez de recortarse */
+.diapo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .diapo.sin-foto img { object-fit: contain; padding: 1.5rem 1.5rem 4.5rem; }
 .diapo figcaption { position: absolute; inset: auto 0 0 0; padding: 2rem 1.3rem .9rem; background: linear-gradient(transparent, rgba(18,61,23,.88)); color: var(--crema); }
 .diapo figcaption b { font: 400 1.35rem var(--display); }
@@ -131,8 +132,24 @@ input, select, textarea { font: inherit; padding: .65rem; border: 3px solid var(
 .wa-flotante { position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 60px; height: 60px; display: grid; place-items: center; background: #25d366; color: #25d366; border: 3px solid var(--hoja-osc); border-radius: 50%; box-shadow: 0 4px 0 var(--hoja-osc); }
 .wa-flotante svg { width: 36px; height: 36px; }
 
+/* Quiénes somos: menos espacio bajo el encabezado y texto en color tierra (de la paleta de la marca) */
+.seccion-nosotros { padding-top: 1.8rem; }
+.texto-tierra, .texto-tierra p { color: var(--tierra); }
+.texto-tierra p + p { margin-top: 1rem; }
+
+/* Servicios (los dibuja React desde js/servicios.js) */
+.grid-servicios { align-items: start; }
+.tarjeta .desde { font-weight: 800; color: var(--tierra); margin: .6rem 0 1rem; }
+.tarjeta .acciones-serv { display: flex; flex-wrap: wrap; gap: .4rem; }
+.paquetes { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .7rem; }
+.paquetes li { display: grid; grid-template-columns: 1fr auto; gap: .1rem .8rem; align-items: center; border-top: 2px dotted var(--pasto); padding-top: .7rem; }
+.paquetes .p-nombre { font-weight: 800; color: var(--hoja); }
+.paquetes .p-precio { font: 400 1.1rem var(--display); color: var(--naranja-osc, #d96d00); }
+.paquetes .btn { grid-column: 1 / -1; margin: .2rem 0 0; font-size: .95rem; padding: .35rem 1.1rem; text-align: center; }
+
 /* Escritorio: desde 760px */
 @media (min-width: 760px) {
+  .diapo { aspect-ratio: 4 / 3; }
   .menu-btn { display: none; }
   .menu { display: flex; flex-direction: row; align-items: center; width: auto; gap: 1.1rem; padding: 0; }
   .menu .pill { margin: 0; }
