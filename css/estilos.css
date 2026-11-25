@@ -84,7 +84,7 @@ a { color: inherit; }
 .producto-img { position: relative; height: 200px; background: var(--lima-cl); border-bottom: 3px solid var(--hoja); }
 .producto[data-categoria="baby shower"] .producto-img { background: #fff0b8; }
 .producto[data-categoria="temática"] .producto-img { background: #ffe0b5; }
-.producto-img img { width: 100%; height: 100%; object-fit: cover; }
+.producto-img img { width: 100%; height: 100%; object-fit: contain; }
 .producto-img .sin-foto { object-fit: contain; padding: .8rem; }
 .etiqueta { position: absolute; top: 10px; left: 10px; background: var(--hoja); color: var(--crema); font: 800 .75rem "Nunito", sans-serif; padding: .15rem .7rem; border-radius: 999px; }
 .producto-cuerpo { padding: 1.2rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
